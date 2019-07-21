@@ -1,0 +1,10 @@
+body{
+    background-image: url('./images/flagbackground.jpg');
+}
+
+.container{
+    width:900px;
+    background-color:blue;
+    color:white;
+    font-family: 'Merriweather', serif;
+}

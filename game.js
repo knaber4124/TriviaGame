@@ -4,12 +4,27 @@ $(document).ready(function () {
 let wins = 0;
 let losses = 0;
 let options =[groverCleveland, abrahamLincoln, franklinPierce, johnAdams,martinVanBuren, rutherfordBHayes, jamesGarfield, williamHowardTaft, woodrowWilson, geraldFord,herbertHoover];
+var counterStart = 120;
+var intervalID;
 
+function start(){
+    clearInterval(intervalID);
+    intervalID=setInterval(decrement,1000);
+};
+
+function decrement(){
+    counterStart--;
+    $('.counter').text(counterStart);
+};
 
 
 //DOM Manipulation
 $('.wins').text(wins);
 $('.losses').text(losses);
+$('.counter').text(counterStart);
+$('.play').on('click', function(){
+    start()
+});
 
 //JSON Objects
 var groverCleveland = {
@@ -91,7 +106,7 @@ var herbertHoover={
 };
 
 
-$('.answers').text(options.indexOf([2]).q);
+$('.answers').text(options.q);
 
 
 
