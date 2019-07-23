@@ -4,7 +4,21 @@ body{
 
 .container{
     width:900px;
+    height:650px;
     background-color:blue;
     color:white;
     font-family: 'Merriweather', serif;
+}
+.hide{
+    display:none;
+}
+.question{
+    color:white;
+}
+.questions{
+    font-size: 20px;
+}
+.question:hover{
+    background-color:white;
+    color:red;
 }
