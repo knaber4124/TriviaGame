@@ -25,18 +25,32 @@
 </head>
 
 <body>
-    <div class="modal fade" id="timeUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="timeUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="timeUpModalTitle">You Lose</h5>
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">You Ran Out Of Time</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    You ran out of time!
+                    <div class='row'>
+                        <div class='col-md-6 text-center'>
+                            <p>Correct Answers</p>
+                            <p class=modalWins></p>
+                        </div>
+                        <div class='col-md-6 text-center'>
+                            <p>Wrong Answers</p>
+                            <p class='modalLosses'></p>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-12 text-center'>
+                            <img src='https://media.giphy.com/media/3iUMl1Fh6HRew/giphy.gif' height='200' width='300'>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -79,7 +93,7 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q1answers'>
                         <button type="button" class="btn btn-primary question q1btn1"></button>
                         <button type="button" class="btn btn-primary question q1btn2"></button>
@@ -106,7 +120,7 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q2answers'>
                         <button type="button" class="btn btn-primary question q2btn1"></button>
                         <button type="button" class="btn btn-primary question q2btn2"></button>
@@ -133,12 +147,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q3answers'>
-                            <button type="button" class="btn btn-primary question q3btn1"></button>
-                            <button type="button" class="btn btn-primary question q3btn2"></button>
-                            <button type="button" class="btn btn-primary question q3btn3"></button>
-                            <button type="button" class="btn btn-primary question q3btn4"></button>
+                        <button type="button" class="btn btn-primary question q3btn1"></button>
+                        <button type="button" class="btn btn-primary question q3btn2"></button>
+                        <button type="button" class="btn btn-primary question q3btn3"></button>
+                        <button type="button" class="btn btn-primary question q3btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -160,12 +174,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q4answers'>
-                            <button type="button" class="btn btn-primary question q4btn1"></button>
-                            <button type="button" class="btn btn-primary question q4btn2"></button>
-                            <button type="button" class="btn btn-primary question q4btn3"></button>
-                            <button type="button" class="btn btn-primary question q4btn4"></button>
+                        <button type="button" class="btn btn-primary question q4btn1"></button>
+                        <button type="button" class="btn btn-primary question q4btn2"></button>
+                        <button type="button" class="btn btn-primary question q4btn3"></button>
+                        <button type="button" class="btn btn-primary question q4btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -187,12 +201,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q5answers'>
-                            <button type="button" class="btn btn-primary question q5btn1"></button>
-                            <button type="button" class="btn btn-primary question q5btn2"></button>
-                            <button type="button" class="btn btn-primary question q5btn3"></button>
-                            <button type="button" class="btn btn-primary question q5btn4"></button>
+                        <button type="button" class="btn btn-primary question q5btn1"></button>
+                        <button type="button" class="btn btn-primary question q5btn2"></button>
+                        <button type="button" class="btn btn-primary question q5btn3"></button>
+                        <button type="button" class="btn btn-primary question q5btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -214,12 +228,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q6answers'>
-                            <button type="button" class="btn btn-primary question q6btn1"></button>
-                            <button type="button" class="btn btn-primary question q6btn2"></button>
-                            <button type="button" class="btn btn-primary question q6btn3"></button>
-                            <button type="button" class="btn btn-primary question q6btn4"></button>
+                        <button type="button" class="btn btn-primary question q6btn1"></button>
+                        <button type="button" class="btn btn-primary question q6btn2"></button>
+                        <button type="button" class="btn btn-primary question q6btn3"></button>
+                        <button type="button" class="btn btn-primary question q6btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -241,12 +255,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q7answers'>
-                            <button type="button" class="btn btn-primary question q7btn1"></button>
-                            <button type="button" class="btn btn-primary question q7btn2"></button>
-                            <button type="button" class="btn btn-primary question q7btn3"></button>
-                            <button type="button" class="btn btn-primary question q7btn4"></button>
+                        <button type="button" class="btn btn-primary question q7btn1"></button>
+                        <button type="button" class="btn btn-primary question q7btn2"></button>
+                        <button type="button" class="btn btn-primary question q7btn3"></button>
+                        <button type="button" class="btn btn-primary question q7btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -268,12 +282,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q8answers'>
-                            <button type="button" class="btn btn-primary question q8btn1"></button>
-                            <button type="button" class="btn btn-primary question q8btn2"></button>
-                            <button type="button" class="btn btn-primary question q8btn3"></button>
-                            <button type="button" class="btn btn-primary question q8btn4"></button>
+                        <button type="button" class="btn btn-primary question q8btn1"></button>
+                        <button type="button" class="btn btn-primary question q8btn2"></button>
+                        <button type="button" class="btn btn-primary question q8btn3"></button>
+                        <button type="button" class="btn btn-primary question q8btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -295,12 +309,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q9answers'>
-                            <button type="button" class="btn btn-primary question q9btn1"></button>
-                            <button type="button" class="btn btn-primary question q9btn2"></button>
-                            <button type="button" class="btn btn-primary question q9btn3"></button>
-                            <button type="button" class="btn btn-primary question q9btn4"></button>
+                        <button type="button" class="btn btn-primary question q9btn1"></button>
+                        <button type="button" class="btn btn-primary question q9btn2"></button>
+                        <button type="button" class="btn btn-primary question q9btn3"></button>
+                        <button type="button" class="btn btn-primary question q9btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -322,12 +336,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q10answers'>
-                            <button type="button" class="btn btn-primary question q10btn1"></button>
-                            <button type="button" class="btn btn-primary question q10btn2"></button>
-                            <button type="button" class="btn btn-primary question q10btn3"></button>
-                            <button type="button" class="btn btn-primary question q10btn4"></button>
+                        <button type="button" class="btn btn-primary question q10btn1"></button>
+                        <button type="button" class="btn btn-primary question q10btn2"></button>
+                        <button type="button" class="btn btn-primary question q10btn3"></button>
+                        <button type="button" class="btn btn-primary question q10btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -349,12 +363,12 @@
             <div class='row'>
                 <div class='col-md-3'>
                 </div>
-                <div class='col-md-6 text-center'>
+                <div class='col-md-6 text-center answers'>
                     <p class='q11answers'>
-                            <button type="button" class="btn btn-primary question q11btn1"></button>
-                            <button type="button" class="btn btn-primary question q11btn2"></button>
-                            <button type="button" class="btn btn-primary question q11btn3"></button>
-                            <button type="button" class="btn btn-primary question q11btn4"></button>
+                        <button type="button" class="btn btn-primary question q11btn1"></button>
+                        <button type="button" class="btn btn-primary question q11btn2"></button>
+                        <button type="button" class="btn btn-primary question q11btn3"></button>
+                        <button type="button" class="btn btn-primary question q11btn4"></button>
                     </p>
                 </div>
                 <div class='col-md-3'>
@@ -372,16 +386,34 @@
                 <div class='col-md-2 text-center'>
                 </div>
                 <div class='col-md-3 text-center'>
-                    <p>Incorrect Answersx</p>
+                    <p>Incorrect Answers</p>
                     <p class='losses'></p>
                 </div>
                 <div class='col-md-2'>
                 </div>
             </div>
+            <div class='row'>
+                <div class='col-md-12 text-center wingif hide'>
+                    <p>YOU WIN!</p>
+                    <img src='https://media.giphy.com/media/uKwa2KiBA0rTy/giphy.gif' height=200px width=300px>
+                </div>
+            </div>
+            <div clas='row'>
+                <div class='col-md-12 text-center losegif hide'>
+                    <p>You Lose</p>
+                    <img src='https://media.giphy.com/media/bkiBOCL34XzYA/giphy.gif'>
+                </div>
+            </div>
         </div>
+        <br>
         <div class='row'>
             <div class='col-md-12 text-center load'>
                 <button type="button" class="btn btn-dark play">Start the Game</button>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12 text-center reload hide'>
+                <button type="button" class="btn btn-dark reloadbtn">Play Again</button>
             </div>
         </div>
     </div>

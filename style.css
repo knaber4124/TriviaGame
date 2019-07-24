@@ -4,10 +4,17 @@ body{
 
 .container{
     width:900px;
-    height:650px;
-    background-color:blue;
+    height:750px;
+    background-color:#002868;
     color:white;
     font-family: 'Merriweather', serif;
+}
+.btn{
+    animated: slideInLeft;
+    width:200px;
+    background-color: #bf0a30;
+    color:white;
+    border-color:white;
 }
 .hide{
     display:none;
@@ -17,8 +24,19 @@ body{
 }
 .questions{
     font-size: 20px;
+    height:100px;
 }
-.question:hover{
+.btn:hover{
     background-color:white;
-    color:red;
+    color:#bf0a30;
+}
+.modal-header{
+    background-color: #bf0a30;
+    color:white;
+}
+.modal-body{
+    color: #002868;
+}
+.modal-footer{
+    background-color: #002868;
 }

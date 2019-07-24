@@ -3,13 +3,10 @@ $(document).ready(function () {
     // Global arrays
     let correct = 0;
     let incorrect = 0;
-    let options = [groverCleveland, abrahamLincoln, franklinPierce, johnAdams, martinVanBuren, rutherfordBHayes, jamesGarfield, williamHowardTaft, woodrowWilson, geraldFord, herbertHoover];
     var counterStart = 180;
 
 
     //DOM Manipulation
-    $('.wins').text(correct);
-    $('.losses').text(incorrect);
     $('.counter').text(counterStart);
     $('.play').on('click', function () {
         countdown()
@@ -17,16 +14,29 @@ $(document).ready(function () {
         $('.q1').show();
     });
 
+
+
     function countdown() {
         counterStart--;
         $('.counter').text(counterStart);
         if (counterStart === 0) {
             clearTimeout(counterStart);
             $('#timeUpModal').modal('show');
+            $('.modalWins').text(correct);
+            $('.modalLosses').text(incorrect);
+            $('.questions').hide();
+            $('.answers').hide();
+            $('.reload').show();
             return false;
-        }
+        };
         setTimeout(countdown, 1000);
+        
     } 1000;
+
+    // function stop() {
+    //     clearTimeout(counterStart);
+    //     return false;
+    // };
 
     function advanceTo2True() {
         correct++;
@@ -38,7 +48,7 @@ $(document).ready(function () {
         $('.q1').hide();
         $('.q2').show();
     };
-    function advanceTo3True(){
+    function advanceTo3True() {
         correct++;
         $('.q2').hide();
         $('.q3').show();
@@ -131,12 +141,36 @@ $(document).ready(function () {
     function advanceToEndTrue() {
         correct++;
         $('.q11').hide();
+        $('.wins').text(correct);
+        $('.losses').text(incorrect);
         $('.endDisplay').show();
+        $('.reload').show();
+        // clearTimeout(counterStart);
+        // return false;
+        // setTimeout(countdown, 1000);
     };
     function advanceToEndFalse() {
         incorrect++;
         $('.q11').hide();
+        $('.wins').text(correct);
+        $('.losses').text(incorrect);
         $('.endDisplay').show();
+        $('.reload').show();
+        // clearTimeout(counterStart);
+        // return false;
+        // setTimeout(countdown, 1000);
+    };
+    $('.reload').on('click', function(){
+        location.reload();
+    });
+
+    function endGif(){
+        if(correct>incorrect){
+            $('.wingif').show();
+        }
+        else{
+            $('.losegif').show();
+        };
     };
 
     //JSON Objects
@@ -228,10 +262,10 @@ $(document).ready(function () {
     $('.q1btn1').on('click', function () {
         advanceTo2True();
     });
-    $('.q1btn2,.q1btn3,q1btn4').on('click', function () {
+    $('.q1btn2, .q1btn3, .q1btn4').on('click', function () {
         advanceTo2False();
     });
-    
+
     //Question 2 buttons and question
     $('.q2questions').text(abrahamLincoln.q);
     $('.q2btn1').text(abrahamLincoln.fa3);
@@ -239,10 +273,10 @@ $(document).ready(function () {
     $('.q2btn3').text(abrahamLincoln.fa1);
     $('.q2btn4').text(abrahamLincoln.fa2);
 
-    $('.q2btn2').on('click', function(){
+    $('.q2btn2').on('click', function () {
         advanceTo3True();
     });
-    $('.q2btn1,.q2btn3,.q2btn4').on('click', function(){
+    $('.q2btn1,.q2btn3,.q2btn4').on('click', function () {
         advanceTo3False();
     });
 
@@ -252,20 +286,119 @@ $(document).ready(function () {
     $('.q3btn3').text(franklinPierce.ta);
     $('.q3btn4').text(franklinPierce.fa2);
 
-    $('.q3btn3').on('click', function(){
-        advanceTo4True;
+    $('.q3btn3').on('click', function () {
+        advanceTo4True();
     });
-    $('.q3btn1,.q3btn2,.q3btn4').on('click', function(){
-        advanceTo4False;
+    $('.q3btn1, .q3btn2, .q3btn4').on('click', function () {
+        advanceTo4False();
     });
 
+    $('.q4questions').text(johnAdams.q);
+    $('.q4btn1').text(johnAdams.ta);
+    $('.q4btn2').text(johnAdams.fa3);
+    $('.q4btn3').text(johnAdams.fa1);
+    $('.q4btn4').text(johnAdams.fa2);
 
+    $('.q4btn1').on('click', function () {
+        advanceTo5True();
+    });
+    $('.q4btn2, .q4btn3, .q4btn4').on('click', function () {
+        advanceTo5False();
+    });
 
+    $('.q5questions').text(martinVanBuren.q);
+    $('.q5btn1').text(martinVanBuren.fa3);
+    $('.q5btn2').text(martinVanBuren.fa1);
+    $('.q5btn3').text(martinVanBuren.fa2);
+    $('.q5btn4').text(martinVanBuren.ta);
 
+    $('.q5btn4').on('click', function () {
+        advanceTo6True();
+    });
+    $('.q5btn1, .q5btn2, .q5btn3').on('click', function () {
+        advanceTo6False();
+    });
 
+    $('.q6questions').text(rutherfordBHayes.q);
+    $('.q6btn1').text(rutherfordBHayes.fa2);
+    $('.q6btn2').text(rutherfordBHayes.ta);
+    $('.q6btn3').text(rutherfordBHayes.fa1);
+    $('.q6btn4').text(rutherfordBHayes.fa3);
 
+    $('.q6btn2').on('click', function () {
+        advanceTo7True();
+    });
+    $('.q6btn1, .q6btn3, .q6btn4').on('click', function () {
+        advanceTo7False();
+    });
 
+    $('.q7questions').text(jamesGarfield.q);
+    $('.q7btn1').text(jamesGarfield.ta);
+    $('.q7btn2').text(jamesGarfield.fa3);
+    $('.q7btn3').text(jamesGarfield.fa1);
+    $('.q7btn4').text(jamesGarfield.fa2);
 
+    $('.q7btn1').on('click', function () {
+        advanceTo8True();
+    });
+    $('.q7btn2, .q7btn3, .q7btn4').on('click', function () {
+        advanceTo8False();
+    });
 
+    $('.q8questions').text(williamHowardTaft.q);
+    $('.q8btn1').text(williamHowardTaft.fa3);
+    $('.q8btn2').text(williamHowardTaft.fa1);
+    $('.q8btn3').text(williamHowardTaft.fa2);
+    $('.q8btn4').text(williamHowardTaft.ta);
 
+    $('.q8btn4').on('click', function () {
+        advanceTo9True();
+    });
+    $('.q8btn1, .q8btn2, .q8btn3').on('click', function () {
+        advanceTo9False();
+    });
+
+    $('.q9questions').text(woodrowWilson.q);
+    $('.q9btn1').text(woodrowWilson.fa2);
+    $('.q9btn2').text(woodrowWilson.fa1);
+    $('.q9btn3').text(woodrowWilson.ta);
+    $('.q9btn4').text(woodrowWilson.fa3);
+
+    $('.q9btn3').on('click', function () {
+        advanceTo10True();
+    });
+
+    $('.q9btn1, .q9btn2, .q9btn4').on('click', function () {
+        advanceTo10False();
+    });
+
+    $('.q10questions').text(geraldFord.q);
+    $('.q10btn1').text(geraldFord.fa1);
+    $('.q10btn2').text(geraldFord.fa2);
+    $('.q10btn3').text(geraldFord.ta);
+    $('.q10btn4').text(geraldFord.fa3);
+
+    $('.q10btn3').on('click', function () {
+        advanceTo11True();
+    });
+    $('.q10btn1, .q10btn2, .q10btn4').on('click', function () {
+        advanceTo11False();
+    });
+
+    $('.q11questions').text(herbertHoover.q);
+    $('.q11btn1').text(herbertHoover.ta);
+    $('.q11btn2').text(herbertHoover.fa1);
+    $('.q11btn3').text(herbertHoover.fa2);
+    $('.q11btn4').text(herbertHoover.fa3);
+
+    $('.q11btn1').on('click', function () {
+        advanceToEndTrue();
+        endGif();
+        clearTimeout(counterStart);
+    });
+    $('.q11btn2, .q11btn3, .q11btn4').on('click', function () {
+        advanceToEndFalse();
+        endGif();
+        clearTimeout(counterStart);       
+    });
 });
