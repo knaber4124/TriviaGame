@@ -11,6 +11,7 @@ $(document).ready(function () {
     $('.play').on('click', function () {
         countdown()
         $('.load').hide();
+        $('.counterDisplay').show();
         $('.q1').show();
     });
 
@@ -392,13 +393,17 @@ $(document).ready(function () {
     $('.q11btn4').text(herbertHoover.fa3);
 
     $('.q11btn1').on('click', function () {
+        clearTimeout(counterStart);
         advanceToEndTrue();
         endGif();
-        clearTimeout(counterStart);
+        
+       
     });
     $('.q11btn2, .q11btn3, .q11btn4').on('click', function () {
+        clearTimeout(counterStart);
         advanceToEndFalse();
         endGif();
-        clearTimeout(counterStart);       
+           
+            
     });
 });
