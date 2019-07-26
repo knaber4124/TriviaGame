@@ -187,7 +187,7 @@ $(document).ready(function () {
     $('.reload').on('click', function () {
         location.reload();
     });
-
+    
     function endGif() {
         if (correct > incorrect) {
             $('.wingif').show();
@@ -196,7 +196,6 @@ $(document).ready(function () {
             $('.losegif').show();
         };
     };
-
     //JSON Objects
     var groverCleveland = {
         q: 'The only President to serve in non-consecutive terms',
@@ -275,146 +274,132 @@ $(document).ready(function () {
         fa2: 'George Washington',
         fa3: 'Franklin Delano Roosevelt'
     };
-
-    //Question 1 buttons and question
+//Question 1 buttons and question
     $('.q1questions').text(groverCleveland.q);
     $('.q1btn1').text(groverCleveland.ta);
     $('.q1btn2').text(groverCleveland.fa1);
     $('.q1btn3').text(groverCleveland.fa3);
     $('.q1btn4').text(groverCleveland.fa2);
-
     $('.q1btn1').on('click', function () {
         advanceTo2True();
     });
     $('.q1btn2, .q1btn3, .q1btn4').on('click', function () {
         advanceTo2False();
     });
-
-    //Question 2 buttons and question
+//Question 2 buttons and question
     $('.q2questions').text(abrahamLincoln.q);
     $('.q2btn1').text(abrahamLincoln.fa3);
     $('.q2btn2').text(abrahamLincoln.ta);
     $('.q2btn3').text(abrahamLincoln.fa1);
     $('.q2btn4').text(abrahamLincoln.fa2);
-
     $('.q2btn2').on('click', function () {
         advanceTo3True();
     });
     $('.q2btn1,.q2btn3,.q2btn4').on('click', function () {
         advanceTo3False();
     });
-
+//Question 3
     $('.q3questions').text(franklinPierce.q);
     $('.q3btn1').text(franklinPierce.fa1);
     $('.q3btn2').text(franklinPierce.fa3);
     $('.q3btn3').text(franklinPierce.ta);
     $('.q3btn4').text(franklinPierce.fa2);
-
     $('.q3btn3').on('click', function () {
         advanceTo4True();
     });
     $('.q3btn1, .q3btn2, .q3btn4').on('click', function () {
         advanceTo4False();
     });
-
+//Question 4
     $('.q4questions').text(johnAdams.q);
     $('.q4btn1').text(johnAdams.ta);
     $('.q4btn2').text(johnAdams.fa3);
     $('.q4btn3').text(johnAdams.fa1);
     $('.q4btn4').text(johnAdams.fa2);
-
     $('.q4btn1').on('click', function () {
         advanceTo5True();
     });
     $('.q4btn2, .q4btn3, .q4btn4').on('click', function () {
         advanceTo5False();
     });
-
+//Question 5
     $('.q5questions').text(martinVanBuren.q);
     $('.q5btn1').text(martinVanBuren.fa3);
     $('.q5btn2').text(martinVanBuren.fa1);
     $('.q5btn3').text(martinVanBuren.fa2);
     $('.q5btn4').text(martinVanBuren.ta);
-
     $('.q5btn4').on('click', function () {
         advanceTo6True();
     });
     $('.q5btn1, .q5btn2, .q5btn3').on('click', function () {
         advanceTo6False();
     });
-
+//Question 6
     $('.q6questions').text(rutherfordBHayes.q);
     $('.q6btn1').text(rutherfordBHayes.fa2);
     $('.q6btn2').text(rutherfordBHayes.ta);
     $('.q6btn3').text(rutherfordBHayes.fa1);
     $('.q6btn4').text(rutherfordBHayes.fa3);
-
     $('.q6btn2').on('click', function () {
         advanceTo7True();
     });
     $('.q6btn1, .q6btn3, .q6btn4').on('click', function () {
         advanceTo7False();
     });
-
+//Question 7
     $('.q7questions').text(jamesGarfield.q);
     $('.q7btn1').text(jamesGarfield.ta);
     $('.q7btn2').text(jamesGarfield.fa3);
     $('.q7btn3').text(jamesGarfield.fa1);
     $('.q7btn4').text(jamesGarfield.fa2);
-
     $('.q7btn1').on('click', function () {
         advanceTo8True();
     });
     $('.q7btn2, .q7btn3, .q7btn4').on('click', function () {
         advanceTo8False();
     });
-
+//Question 8
     $('.q8questions').text(williamHowardTaft.q);
     $('.q8btn1').text(williamHowardTaft.fa3);
     $('.q8btn2').text(williamHowardTaft.fa1);
     $('.q8btn3').text(williamHowardTaft.fa2);
     $('.q8btn4').text(williamHowardTaft.ta);
-
     $('.q8btn4').on('click', function () {
         advanceTo9True();
     });
     $('.q8btn1, .q8btn2, .q8btn3').on('click', function () {
         advanceTo9False();
     });
-
+//Question 9
     $('.q9questions').text(woodrowWilson.q);
     $('.q9btn1').text(woodrowWilson.fa2);
     $('.q9btn2').text(woodrowWilson.fa1);
     $('.q9btn3').text(woodrowWilson.ta);
     $('.q9btn4').text(woodrowWilson.fa3);
-
     $('.q9btn3').on('click', function () {
         advanceTo10True();
     });
-
     $('.q9btn1, .q9btn2, .q9btn4').on('click', function () {
         advanceTo10False();
     });
-
+//Question 10
     $('.q10questions').text(geraldFord.q);
     $('.q10btn1').text(geraldFord.fa1);
     $('.q10btn2').text(geraldFord.fa2);
     $('.q10btn3').text(geraldFord.ta);
     $('.q10btn4').text(geraldFord.fa3);
-
     $('.q10btn3').on('click', function () {
         advanceTo11True();
     });
     $('.q10btn1, .q10btn2, .q10btn4').on('click', function () {
         advanceTo11False();
     });
-
+//Question 11 
     $('.q11questions').text(herbertHoover.q);
     $('.q11btn1').text(herbertHoover.ta);
     $('.q11btn2').text(herbertHoover.fa1);
     $('.q11btn3').text(herbertHoover.fa2);
     $('.q11btn4').text(herbertHoover.fa3);
-
     $('.q11btn1').on('click', function () {
         clearTimeout(counterStart);
         advanceToEndTrue();
