@@ -3,7 +3,8 @@ $(document).ready(function () {
     // Global arrays
     let correct = 0;
     let incorrect = 0;
-    var counterStart = 180;
+    var counterStart = 30;
+    var intervalID;
 
 
     //DOM Manipulation
@@ -15,161 +16,183 @@ $(document).ready(function () {
         $('.q1').show();
     });
 
-
-
     function countdown() {
+        clearInterval(intervalID);
+        intervalID = setInterval(decrement, 1000);
+    }
+    function decrement() {
         counterStart--;
         $('.counter').text(counterStart);
         if (counterStart === 0) {
-            clearTimeout(counterStart);
+            stop();
             $('#timeUpModal').modal('show');
             $('.modalWins').text(correct);
             $('.modalLosses').text(incorrect);
             $('.questions').hide();
             $('.answers').hide();
             $('.reload').show();
-            return false;
-        };
-        setTimeout(countdown, 1000);
-        
-    } 1000;
+        }
+    }
+    function stop() {
+        clearInterval(intervalID);
+    }
+    function counterReset() {
+        stop();
+        counterStart = 30;
+        $('.counter').text(counterStart);
+        countdown();
 
-    // function stop() {
-    //     clearTimeout(counterStart);
-    //     return false;
-    // };
+    };
+
+    function endGame() {
+        stop();
+        $('.q11').hide();
+        $('.wins').text(correct);
+        $('.losses').text(incorrect);
+        $('.endDisplay').show();
+        $('.reload').show();
+        $('.counterDisplay').hide();
+    }
 
     function advanceTo2True() {
         correct++;
         $('.q1').hide();
         $('.q2').show();
+        counterReset();
     };
     function advanceTo2False() {
         incorrect++;
         $('.q1').hide();
         $('.q2').show();
+        counterReset();
     };
     function advanceTo3True() {
         correct++;
         $('.q2').hide();
         $('.q3').show();
+        counterReset();
     };
     function advanceTo3False() {
         incorrect++;
         $('.q2').hide();
         $('.q3').show();
+        counterReset();
     };
     function advanceTo4True() {
         correct++;
         $('.q3').hide();
         $('.q4').show();
+        counterReset();
     };
     function advanceTo4False() {
         incorrect++;
         $('.q3').hide();
         $('.q4').show();
+        counterReset();
     };
     function advanceTo5True() {
         correct++;
         $('.q4').hide();
         $('.q5').show();
+        counterReset();
     };
     function advanceTo5False() {
         incorrect++;
         $('.q4').hide();
         $('.q5').show();
+        counterReset();
     };
     function advanceTo6True() {
         correct++;
         $('.q5').hide();
         $('.q6').show();
+        counterReset();
     };
     function advanceTo6False() {
         incorrect++;
         $('.q5').hide();
         $('.q6').show();
+        counterReset();
     };
     function advanceTo7True() {
         correct++;
         $('.q6').hide();
         $('.q7').show();
+        counterReset();
     };
     function advanceTo7False() {
         incorrect++;
         $('.q6').hide();
         $('.q7').show();
+        counterReset();
     };
     function advanceTo8True() {
         correct++;
         $('.q7').hide();
         $('.q8').show();
+        counterReset();
     };
     function advanceTo8False() {
         incorrect++;
         $('.q7').hide();
         $('.q8').show();
+        counterReset();
     };
     function advanceTo9True() {
         correct++;
         $('.q8').hide();
         $('.q9').show();
+        counterReset();
     };
     function advanceTo9False() {
         incorrect++;
         $('.q8').hide();
         $('.q9').show();
+        counterReset();
     };
     function advanceTo10True() {
         correct++;
         $('.q9').hide();
         $('.q10').show();
+        counterReset();
     };
     function advanceTo10False() {
         incorrect++;
         $('.q9').hide();
         $('.q10').show();
+        counterReset();
     };
     function advanceTo11True() {
         correct++;
         $('.q10').hide();
         $('.q11').show();
+        counterReset();
     };
     function advanceTo11False() {
         incorrect++;
         $('.q10').hide();
         $('.q11').show();
+        counterReset();
     };
     function advanceToEndTrue() {
         correct++;
-        $('.q11').hide();
-        $('.wins').text(correct);
-        $('.losses').text(incorrect);
-        $('.endDisplay').show();
-        $('.reload').show();
-        // clearTimeout(counterStart);
-        // return false;
-        // setTimeout(countdown, 1000);
+        endGame();
+
     };
     function advanceToEndFalse() {
         incorrect++;
-        $('.q11').hide();
-        $('.wins').text(correct);
-        $('.losses').text(incorrect);
-        $('.endDisplay').show();
-        $('.reload').show();
-        // clearTimeout(counterStart);
-        // return false;
-        // setTimeout(countdown, 1000);
+        endGame();
+
     };
-    $('.reload').on('click', function(){
+    $('.reload').on('click', function () {
         location.reload();
     });
 
-    function endGif(){
-        if(correct>incorrect){
+    function endGif() {
+        if (correct > incorrect) {
             $('.wingif').show();
         }
-        else{
+        else {
             $('.losegif').show();
         };
     };
@@ -396,14 +419,10 @@ $(document).ready(function () {
         clearTimeout(counterStart);
         advanceToEndTrue();
         endGif();
-        
-       
     });
     $('.q11btn2, .q11btn3, .q11btn4').on('click', function () {
         clearTimeout(counterStart);
         advanceToEndFalse();
         endGif();
-           
-            
     });
 });
